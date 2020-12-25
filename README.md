@@ -1,7 +1,7 @@
 # The Picture of Health
 ## An Interactive Dashboard 
 
-![Webpage Screenshot](../Code/static/images/healthWealth.jpg)
+![Webpage Screenshot](Code/static/images/healthWealth.jpg)
 
 ### Overview
 
