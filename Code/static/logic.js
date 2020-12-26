@@ -240,16 +240,42 @@ d3.json("/education").then(function(edu_data) {
 
         d3.json("/states").then(function(states) {
 
+            data_array = []
+            for (var i = 0; i < edu_data.length; i++) {
+                new_array = []
+                new_array[0] = pov_data[i]
+                new_array[1] = edu_data[i]
+                new_array[2] = states[i]
+
+                data_array.push(new_array)
+
+            }
+            var sortedArray = data_array.sort(function(a, b) { return a[0] - b[0]; });
+
+            console.log(sortedArray)
+
+
+            orderedPov_array = []
+            orderedEdu_array = []
+            orderedStates_array = []
+            for (var i = 0; i < sortedArray.length; i++) {
+                orderedPov_array.push(sortedArray[i][0])
+                orderedEdu_array.push(sortedArray[i][1])
+                orderedStates_array.push(sortedArray[i][2])
+            }
+            console.log(orderedPov_array)
+            data = [orderedEdu_array, orderedPov_array, orderedStates_array]
+
             var trace1 = {
-                x: states,
-                y: edu_data,
+                x: data[2],
+                y: data[0],
                 name: 'College Grad Rate',
                 type: 'bar',
             };
 
             var trace2 = {
-                x: states,
-                y: pov_data,
+                x: data[2],
+                y: data[1],
                 name: 'Poverty Rate',
                 type: 'bar'
             };
