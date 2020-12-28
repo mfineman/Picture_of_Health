@@ -183,6 +183,7 @@ d3.json("/combined_data").then(function(d) {
 
     var layout = {
         title: "Violent Crime v. Poverty",
+        xaxis: { tickangle: 45 },
         yaxis: { title: "Violent Crime Rate" },
         yaxis2: {
             title: "Poverty Rate",
@@ -281,7 +282,17 @@ d3.json("/education").then(function(edu_data) {
             };
 
             var chart_data = [trace1, trace2];
-            var layout = { barmode: 'group', title: 'College Graduation v. Poverty' };
+            var layout = {
+                barmode: 'group',
+                title: 'College Graduation v. Poverty',
+                xaxis: { tickangle: 45 },
+                yaxis: { title: "Percent of Population" },
+                legend: {
+                    x: 1,
+                    xanchor: 'right',
+                    y: 1
+                }
+            };
 
             Plotly.newPlot("educationChart", chart_data, layout);
 
