@@ -184,7 +184,7 @@ d3.json("/combined_data").then(function(d) {
     var layout = {
         title: "Violent Crime v. Poverty",
         xaxis: { tickangle: 45 },
-        yaxis: { title: "Violent Crime Rate" },
+        yaxis: { title: "Violent Crime Rate (x 10)" },
         yaxis2: {
             title: "Poverty Rate",
             titlefont: { color: 'rgb(148, 103, 189)' },
