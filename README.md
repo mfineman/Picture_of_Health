@@ -7,7 +7,7 @@
 
 This project involved building a dashboard that enables uers to explore the relationships between poverty and various factors known to affect overall health: education level, availability of good food, and safety from violent crime. 
 
-Data is derived from several governmenbt and NGO web sites in the form of csv files imported into a postgresql database.  The table of state healthscores was scraped from the United Health Foundations' health rankings webpage. (In the interests of loading speed, the health scores table is not scraped in real time, but was loaded into the database with the other static data downloaded in csv form.) 
+Data is derived from several government and NGO web sites in the form of csv files imported into a postgresql database.  The table of state healthscores was scraped from the United Health Foundations' health rankings webpage. (In the interests of loading speed, the health scores table is not scraped in real time, but was loaded into the database with the other static data downloaded in csv form.) 
 
 We used python, sqlalchemy and flask to get the data out of the database and into web endpoints where javascript could find them for our visualizations.
 
