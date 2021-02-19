@@ -1,7 +1,7 @@
 # The Picture of Health
 ## An Interactive Dashboard 
 
-![Webpage Screenshot](../Code/static/Images/healthWealth.jpg)
+![Webpage Screenshot](https://github.com/mfineman/Picture_of_Health/blob/main/Code/static/Images/healthWealth.jpg)
 
 ### Overview
 
