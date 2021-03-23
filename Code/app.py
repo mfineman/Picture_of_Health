@@ -3,15 +3,19 @@ import numpy as np
 import pandas as pd
 import json
 
+import os
+import psycopg2
+DATABASE_URL = os.environ['DATABASE_URL']
+
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
-# from sqlalchemy.ext.declarative import declarative_base
+
 
 from config import password
-engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Poverty_and_wellness")
-conn = engine.connect()
+# engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Poverty_and_wellness")
+engine = psycopg2.connect(DATABASE_URL, sslmode='require')
    
 session = Session(bind=engine)
 

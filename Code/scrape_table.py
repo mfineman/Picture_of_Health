@@ -26,7 +26,8 @@ def scrape():
         
     from config import password
 
-    engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Poverty_and_wellness")
+    # engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Poverty_and_wellness")
+    engine = psycopg2.connect(DATABASE_URL, sslmode='require')
     conn = engine.connect()
 
     df_health_rank.to_sql('state_health_rankings', conn, index=False, if_exists='replace')
