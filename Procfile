@@ -1,1 +1,1 @@
-web: app.py run starti
+web: gunicorn app:app 

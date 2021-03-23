@@ -16,7 +16,6 @@ from sqlalchemy import create_engine, func, inspect
 from config import password
 # engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Poverty_and_wellness")
 engine = psycopg2.connect(DATABASE_URL, sslmode='require')
-   
 session = Session(bind=engine)
 
 # GET DATA FROM SQL and creating endpoints: 
@@ -107,8 +106,9 @@ def crime_data():
 # Approach 3: apply sqlalchemy engine.execute method to manipulate sql tables directly without reflection:
 @app.route("/food_deserts",methods=["GET","POST"])
 def food_deserts():
-
-    engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Poverty_and_wellness")
+    # engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Poverty_and_wellness")
+    engine = psycopg2.connect(DATABASE_URL, sslmode='require')
+    session = Session(bind=engine)
     food_data = engine.execute('SELECT f.state, f.abbr, f.desert_rate, p.pov_rate from food_deserts as f INNER JOIN poverty as p ON f.state = p.state').fetchall()
 
     food_dict_list=[] 
@@ -130,7 +130,9 @@ def food_deserts():
 @app.route("/combined_data")
 def combined_data():
 
-    engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Poverty_and_wellness")
+    # engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Poverty_and_wellness")
+    engine = psycopg2.connect(DATABASE_URL, sslmode='require')
+    session=Session(engine)
     combined_data = engine.execute('SELECT e.state, e.college_per, f.desert_rate, s.score, p.pov_rate, v.vio_rate from education as e INNER JOIN food_deserts as f ON e.state = f.state INNER JOIN state_health_rankings as s ON f.state = s.state INNER JOIN poverty as p ON s.state = p.state INNER JOIN violent_crime as v ON p.state = v.state ORDER BY e.state').fetchall()
 
     combined_dict_list=[] 
