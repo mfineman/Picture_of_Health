@@ -24,9 +24,15 @@ Similiarly, we used a couple of different approaches to create our visualization
 ### Observations
 The point of the project was not to apply rigorous statistical analysis, but to allow users to ask questions about possible correlations between poverty and health factors and get a visual sense of the relationships among them, possibly teeing up issues warranting further study.  Some interesting observations that emerge from the visualizations include the following:
 
+![Food Availability Chart](https://github.com/mfineman/Picture_of_Health/blob/main/Code/static/Images/food_avail.png)
+
 1.  On the face of it, the correlation between food deserts and poverty does not seem very strong, especially in the middle of the range.  Indeed, the prevalence of food deserts in some states seems to have more to do with population density than poverty.  For example, South Dakota has the most people living in food deserts but ranks 32nd for poverty.  Other more densely populated states, such as Connecticut and Massachusetts, also have large populations living in food deserts although their overall poverty rates are low.  In these cases, we might surmise that their food desert rankings are driven by a few large urban areas where poverty may indeed correlate to inaccessibility of sources of good food.
 
+![Crime Chart](https://github.com/mfineman/Picture_of_Health/blob/main/Code/static/Images/crime.png)
+
 2.  The line graph comparing poverty rates with violent crime rates dramatically illustrates that the two scourges often go hand in hand, with a few interesting anomolies.  Mississipi and West Virginia, which have two of the worst poverty rates in the country, have some of the lowest rates of violent crime, while the most violent state, Alaska, ranks somewhere in the middle on poverty.  It would be interesting to explore further how some states with high levels of poverty are able to keep their citizens safe while others cannot.
+
+![College Graduation Chart](https://github.com/mfineman/Picture_of_Health/blob/main/Code/static/Images/college.png)
 
 3.  The bar graph juxtaposing college graduation rates with poverty rates appears to support the hypothesis  that poverty is related to lack of education.  In general, the highest poverty rates (orange bars) are matched with the lowest graduation rates (blue).  However, it is not a strict one to one relationship, and it would be interesting to know why some states with high poverty rates, like North Carolina and Georgia, for example (eight and ninth, respectively), manage to have relatively high graduation rates (21st and 20th).  One hypothesis might be that, unlike the other states in the top ten for poverty, North Carolina and Georgia both host industrial sectors requiring 
 large numbers of professional employees.
